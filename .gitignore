@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Build output
+dist/
+build/
+
+# PlatformIO
+pager-esp32/.pio/
+
+# ESP32 secrets
+pager-esp32/src/secrets.h
+
+# Backup files
+backup/
+*.bak

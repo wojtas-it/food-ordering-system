@@ -1,0 +1,222 @@
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #dce3f5 0%, #c8b5d8 100%);
+  padding: 20px;
+  position: relative;
+}
+
+.home-content {
+  text-align: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.home-title {
+  font-size: 72px;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.home-subtitle {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 50px;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 80px;
+  flex-wrap: wrap;
+}
+
+.kitchen-button-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.btn-kitchen {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 10px 20px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.btn-kitchen:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-order-main {
+  padding: 28px 60px !important;
+  font-size: 32px !important;
+  min-width: 400px !important;
+  background: white !important;
+  color: #8b9dc3 !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15) !important;
+  font-weight: 700 !important;
+  border-radius: 16px !important;
+}
+
+.btn-order-main:hover {
+  transform: scale(1.05) translateY(-4px) !important;
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.3) !important;
+  background: #fff5f2 !important;
+}
+
+.home-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.info-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #a5b4d4, #8b9dc3);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(139, 157, 195, 0.3);
+}
+
+.info-card:hover {
+  transform: translateY(-8px);
+}
+
+.info-icon {
+  font-size: 64px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.info-card p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  min-width: 400px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-bottom: 10px;
+  color: var(--text-primary);
+  font-size: 28px;
+}
+
+.modal-content p {
+  margin-bottom: 25px;
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.error-message {
+  color: var(--danger-color);
+  font-size: 14px;
+  margin: -5px 0 0 0;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-buttons button {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .home-title {
+    font-size: 48px;
+  }
+
+  .home-subtitle {
+    font-size: 18px;
+  }
+
+  .home-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-order-main {
+    min-width: 300px !important;
+    font-size: 24px !important;
+    padding: 20px 40px !important;
+  }
+
+  .modal-content {
+    min-width: 90%;
+    padding: 30px 20px;
+  }
+
+  .kitchen-button-container {
+    top: 10px;
+    right: 10px;
+  }
+}
