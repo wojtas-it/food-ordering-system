@@ -1,18 +1,18 @@
 # Food Ordering System
 
-Fullstack system samoobsługowego zamawiania jedzenia z integracją IoT — pagery ESP32 powiadamiają klientów o gotowości zamówienia w czasie rzeczywistym.
+A fullstack self-service food ordering system with IoT integration, ESP32 pagers notify customers in real time when their order is ready.
 
-![Ekran główny](./screens/1_main.jpg)
+![Main screen](./screens/1_main.jpg)
 
-## Funkcjonalności
+## Features
 
-- Przeglądanie menu i składanie zamówień bez konta
-- Panel kuchenny (real-time, WebSocket) — kucharz zmienia status zamówień
-- Pager ESP32 z wyświetlaczem OLED: buzzer + LED sygnalizują gotowość zamówienia
-- System kont z rolami (admin / kucharz) — admin akceptuje nowych kucharzy
-- Panel admina: zarządzanie użytkownikami i produktami
+- Browse the menu and place orders without an account
+- Kitchen panel (real-time, WebSocket) where the cook changes the order status
+- ESP32 pager with an OLED display: a buzzer and LED signal that the order is ready
+- Account system with roles (admin / cook), the admin approves new cooks
+- Admin panel: managing users and products
 
-## Architektura
+## Architecture
 
 ```
 ┌─────────────┐     HTTP/WS      ┌──────────────────┐     MongoDB
@@ -27,54 +27,54 @@ Fullstack system samoobsługowego zamawiania jedzenia z integracją IoT — page
                                  └──────────────────┘
 ```
 
-## Stack technologiczny
+## Tech stack
 
-| Warstwa | Technologie |
+| Layer | Technologies |
 |---------|-------------|
 | Frontend | React 19, Vite, React Router |
 | Backend | Node.js, Express, WebSocket (ws) |
-| Baza danych | MongoDB, Mongoose |
+| Database | MongoDB, Mongoose |
 | Hardware | ESP32, PlatformIO, WebSockets, ArduinoJson |
-| Wyświetlacz | OLED SH1106 (ThingPulse) |
+| Display | OLED SH1106 (ThingPulse) |
 | Auth | JWT, bcrypt |
 
-## Zrzuty ekranu
+## Screenshots
 
-### Aplikacja klienta
+### Client app
 
-| Menu | Koszyk |
+| Menu | Cart |
 |------|--------|
-| ![Menu](./screens/2_menu.jpg) | ![Koszyk](./screens/3_basket.jpg) |
+| ![Menu](./screens/2_menu.jpg) | ![Cart](./screens/3_basket.jpg) |
 
-### Panel kuchenny
+### Kitchen panel
 
-![Kuchnia](./screens/4_kuchnia.jpg)
+![Kitchen](./screens/4_kuchnia.jpg)
 
-### Panel admina
+### Admin panel
 
 ![Admin](./screens/5_admin.jpg)
 
-### Pager ESP32 — stany urządzenia
+### ESP32 pager, device states
 
-| Oczekiwanie | W trakcie realizacji | Gotowe! |
+| Waiting | In progress | Ready! |
 |-------------|----------------------|---------|
-| ![Oczekiwanie](./screens/pager_oczekiwanie.jpg) | ![W trakcie](./screens/pager_w_trakcie.jpg) | ![Gotowe](./screens/pager_gotowe.jpg) |
+| ![Waiting](./screens/pager_oczekiwanie.jpg) | ![In progress](./screens/pager_w_trakcie.jpg) | ![Ready](./screens/pager_gotowe.jpg) |
 
-![Urządzenie](./screens/pager.jpg)
+![Device](./screens/pager.jpg)
 
-## Uruchomienie
+## Running it
 
-### Wymagania
+### Requirements
 - Node.js 18+
 - MongoDB
-- (opcjonalnie) ESP32 z PlatformIO do pagerów
+- (optional) ESP32 with PlatformIO for the pagers
 
 ### Backend
 
 ```bash
 cd backend
 cp .env.example .env
-# Uzupełnij JWT_SECRET i MONGODB_URI w .env
+# Fill in JWT_SECRET and MONGODB_URI in .env
 npm install
 npm run dev
 ```
@@ -93,11 +93,11 @@ npm run dev
 ```bash
 cd pager-esp32/src
 cp secrets.h.example secrets.h
-# Uzupełnij WIFI_SSID, WIFI_PASSWORD i BACKEND_IP w secrets.h
-# Wgraj przez PlatformIO
+# Fill in WIFI_SSID, WIFI_PASSWORD and BACKEND_IP in secrets.h
+# Upload via PlatformIO
 ```
 
-## Struktura projektu
+## Project structure
 
 ```
 food-ordering-system/
@@ -113,14 +113,18 @@ food-ordering-system/
 │       ├── pages/
 │       ├── context/
 │       └── services/
-├── pager-esp32/      # Firmware ESP32 (PlatformIO)
+├── pager-esp32/      # ESP32 firmware (PlatformIO)
 │   └── src/
 │       └── main.cpp
-├── docs/             # Dokumentacja, diagramy, ERD
-└── screens/          # Zrzuty ekranu i zdjęcia urządzenia
+├── docs/             # Documentation, diagrams, ERD
+└── screens/          # Screenshots and device photos
 ```
 
-## Autor
+## Author
 
-Filip — student Inżynierii Systemów Inteligentnych, 3. rok  
+Filip, Intelligent Systems Engineering student, 3rd year  
 [GitHub](https://github.com/wojtas-it)
+
+## More
+
+Portfolio: [wojtas.it](https://wojtas.it)
